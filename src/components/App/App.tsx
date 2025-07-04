@@ -11,7 +11,7 @@ import MovieModal from '../MovieModal/MovieModal';
 
 export default function App() {
   const [movies, setMovies] = useState<Movie[]>([]);
-  const [movie, setMovie] = useState<Movie>();
+  const [movie, setMovie] = useState<Movie | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,7 +37,7 @@ export default function App() {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => {
     setIsModalOpen(false);
-    setMovie(undefined);
+    setMovie(null);
   };
 
   const handleModal = (movie: Movie) => {
